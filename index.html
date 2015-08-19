@@ -4,8 +4,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Merriweather' rel='stylesheet' type='text/css'>
-
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style-guide.css"> <!-- Resource style -->
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
@@ -25,7 +23,7 @@
 				<li><a href="#buttons">Buttons</a></li>
 				<li><a href="#icons">Iconography</a></li>
 				<li><a href="#form">Forms</a></li>
-    <li><a href="#site">Marketing Website</a></li>
+    <li><a href="#site">Website</a></li>
 			</ul> <!-- cd-main-nav -->
 		</nav>
 		
@@ -81,26 +79,186 @@
 		<section id="typography" class="cd-typography">
 			<h2>Typography</h2>
 
-			<div class="cd-box">
-				<h1>Heading, <span></span></h1>
-				<p>Aa - <span></span>. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis voluptate distinctio reprehenderit, autem deleniti ad <a href="#0">voluptatum eaque</a>. Optio ea aperiam nisi distinctio nemo repellat, voluptate fugiat. Quidem neque illum, blanditiis!</p>
+			<div class="cd-box hascode">
+     <h1>Main Heading, <span></span></h1>
+    <h2>Page Heading, 300 Lato 30px</h2>
+    <h3>Section Heading, 600 Lato 14px, 1px solid #E8E8E8 bottom border</h3>
+    <h4>Paragraph Title, 600 Lato 14px</h4>
+				<p>Aa - Body, <span></span>. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis voluptate distinctio reprehenderit, autem deleniti ad <a href="#0">voluptatum eaque</a>. Optio ea aperiam nisi distinctio nemo repellat, voluptate fugiat. Quidem neque illum, blanditiis!</p>
+     
+     <p><button class="typeshow">Show Code</button></p>
 			</div>
-		</section>
+    
+    	<div id="typecode" class="cd-box code hide">
+<pre><code>h1 {
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 0 0 .4em;
+    color: #2aa18b;
+  }
 
-		<section id="buttons" class="cd-buttons">
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 300;
+    text-transform: inherit;
+    color: #2aa18b;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 14px;
+    color: #666;
+    border-bottom: 1px solid #E8E8E8;
+    padding-bottom: 10px;
+  }
+
+  h4 {
+    font-weight: 600;
+    font-size: 14px;
+    color: #666;
+    padding:25px 0 5px;
+  }
+
+  p {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: #58585b;
+    font-weight: 300;
+  }
+
+  p a {
+    color: #3ea5ad;
+    text-decoration: none;
+  }
+
+  p a:hover, p a:focus {
+    color: #888;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    h1 {
+      font-size: 2.4rem;
+    }
+
+    h2 {
+      font-size: 2.0rem;
+    }
+    
+    p {
+      font-size: 1.6rem;
+      line-height: 1.6;
+    }
+  }</code></pre>
+
+    </div>
+    
+		</section>
+  
+
+		<section id="buttons" class="cd-buttons hascode">
 			<h2>Buttons</h2>
 
 			<div class="cd-box">
-				<button class="btn">Normal</button>
-				<button class="btn btn-success">Success</button>
-				<button class="btn btn-alert">Alert</button>
-				<button class="btn btn-outline">Outline</button>
+				<button class="btn">Primary</button>
+    <button class="btn btn-secondary">Secondary</button>
+				<button class="btn btn-delete">Delete</button>
+     
+    <p><button class="btnshow">Show Code</button></p>
+     
 			</div>
+    
+        	<div id="btncode" class="cd-box code hide">
+           
+<pre><code>__HTML__
+&lt;button class="btn"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-secondary">Secondary&lt;/button&gt;
+&lt;button class="btn btn-delete">Delete&lt;/button&gt;
+
+__CSS__
+
+.btn {
+  margin: .5em;
+  background: #3ea5ad;
+  border: 1px solid #3ea5ad;
+  line-height: 12px;
+  min-width: initial;
+  padding: 12px 18px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  vertical-align: middle;
+  outline: none;
+  font-size: 14px;
+  font-family: 'Lato', "Helvetica Neue", Arial, Helvetica, sans-serif;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.no-touch .btn:hover, 
+.no-touch .btn.btn-secondary:hover,
+.no-touch .btn.btn-delete:hover,
+.no-touch .btn.btn-success:hover {
+  background: #414042;
+  color: #fff;
+  border: 1px solid #414042;
+}
+
+.btn.btn-success {
+  background: #2aa18b;
+  font-size: 14px;
+}
+
+.btn.btn-delete {
+  background-color: #fff;
+  border: 1px solid #f70000;
+  color: #f70000;
+  font-weight: 600;
+  padding: 12px 18px;
+  font-size: 14px;
+}
+
+.btn.btn-secondary {
+  margin: .5em;
+  background: #fff;
+  border: 1px solid #3ea5ad;
+  line-height: 12px;
+  min-width: initial;
+  padding: 12px 18px;
+  text-decoration: none;
+  color: #3ea5ad;
+  font-weight: 600;
+  vertical-align: middle;
+  outline: none;
+  font-size: 14px;
+  font-family: 'Lato', "Helvetica Neue", Arial, Helvetica, sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}</code></pre>
+
+    </div>
 
 		</section>
 
 		<section id="icons" class="cd-icons">
 			<h2>Icons</h2>
+    
 
 			<ul class="cd-box">
 				<li class="cd-icon-1"></li>

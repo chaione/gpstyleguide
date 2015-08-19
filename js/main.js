@@ -28,33 +28,11 @@ jQuery(document).ready(function($){
 	});
 
 	/*******************
-		buttons
-	********************/
-	var buttonsWrapper = $('#buttons .cd-box'),
-		buttonsHtml = buttonsWrapper.html(),
-		containerHtml = $('<div class="cd-box"></div>').insertAfter(buttonsWrapper),
-		buttonsHtmlText = buttonsHtml.split('</button>');
-
-	$.map(buttonsHtmlText, function(value){
-		if(value.indexOf('button') >= 0 ) {
-			var splitText = value.split('class="'),
-				block1 = splitText[0]+'class="';
-				block2 = splitText[1].split('"');
-				
-			var wrapperElement = $('<p></p>').text(block1),
-				spanElement = $('<span></span>').text(block2[0]);
-			spanElement.appendTo(wrapperElement);
-			wrapperElement.appendTo(containerHtml);
-			wrapperElement.append('"'+block2[1]+'&lt;/button&gt;');
-		}
-	});
-
-	/*******************
 		typography
 	********************/
 	var heading = $('#typography h1'),
 		headingDescriptionText = heading.children('span').eq(0),
-		body = heading.next('p'),
+		body = heading.siblings('p'),
 		bodyDescriptionText = body.children('span').eq(0);
 		
 	setTypography(heading, headingDescriptionText);
@@ -85,8 +63,8 @@ jQuery(document).ready(function($){
         $('header').removeClass('nav-is-visible');
         var target= $(this.hash),
         	topMargin = target.css('marginTop').replace('px', ''),
-        	hedearHeight = $('header').height();
-        $('body,html').animate({'scrollTop': parseInt(target.offset().top - hedearHeight - topMargin)}, 200); 
+        	headerHeight = $('header').height();
+        $('body,html').animate({'scrollTop': parseInt(target.offset().top - headerHeight - topMargin)}, 200); 
     });
     //update selected navigation element
     $(window).on('scroll', function(){
@@ -107,4 +85,28 @@ jQuery(document).ready(function($){
 			}
 		});
 	}
+});
+
+
+// hide show stuff
+
+
+$('.typeshow').click(function(){
+  
+  $('#typecode').toggleClass('hide');
+  
+  if ( $('#typecode').hasClass('hide') )
+  $('.typeshow').text('Show Code');
+  else $('.typeshow').text('Hide Code');
+  
+});
+
+$('.btnshow').click(function(){
+  
+  $('#btncode').toggleClass('hide');
+  
+  if ( $('#btncode').hasClass('hide') )
+  $('.btnshow').text('Show Code');
+  else $('.btnshow').text('Hide Code');
+  
 });
