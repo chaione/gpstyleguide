@@ -110,3 +110,13 @@ $('.btnshow').click(function(){
   else $('.btnshow').text('Hide Code');
   
 });
+
+$('.iconshow').click(function(){
+  
+  $('#iconcode').toggleClass('hide');
+  
+  if ( $('#iconcode').hasClass('hide') )
+  $('.iconshow').text('Show Code');
+  else $('.iconshow').text('Hide Code');
+  
+});
