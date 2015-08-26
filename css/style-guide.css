@@ -215,7 +215,7 @@ header {
 }
 .cd-main-nav li a:hover {
   color: #ffffff;
-  background-color: #2FB59C;
+/*  background-color: #2FB59C;*/
   border-color: #2FB59C;
 }
 
