@@ -224,7 +224,7 @@ header {
     color: #ffffff;
   }
   .cd-main-nav li a.selected {
-    color: #ffffff;
+    color: #2aa18b;
     box-shadow: 0 2px 0 #2aa18b;
   }
   .no-touch .cd-main-nav li a:hover {
